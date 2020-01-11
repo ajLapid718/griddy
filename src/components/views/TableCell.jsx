@@ -2,7 +2,7 @@
 import React from "react";
 
 function TableCell(props) {
-  return <td>cell</td>
+  return <td></td>
 }
 
 export default TableCell;

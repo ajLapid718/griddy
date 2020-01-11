@@ -19,6 +19,14 @@ class Table extends Component {
     this.setState({amountOfColumns: this.state.amountOfColumns + 1})
   }
 
+  handleRemoveRow = () => {
+    this.setState({amountOfRows: this.state.amountOfRows - 1});
+  }
+
+  handleRemoveColumn = () => {
+    this.setState({amountOfColumns: this.state.amountOfColumns - 1});
+  }
+
   render() {
     let rows = [];
 
@@ -32,6 +40,8 @@ class Table extends Component {
         <h1>amount of columns: {this.state.amountOfColumns}</h1>
         <button onClick={this.handleAddRow}>Add Row</button>
         <button onClick={this.handleAddColumn}>Add Column</button>
+        <button onClick={this.handleRemoveRow}>Remove Row</button>
+        <button onClick={this.handleRemoveColumn}>Remove Column</button>
         <table>
           {rows}
         </table>

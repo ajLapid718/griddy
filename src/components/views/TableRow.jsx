@@ -9,7 +9,7 @@ function TableRow(props) {
     cells.push(<TableCell />)
   }
   
-  return <tr>row: {cells}</tr>
+  return <tr>{cells}</tr>
 }
 
 export default TableRow;
