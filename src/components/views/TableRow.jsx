@@ -5,7 +5,7 @@ import TableCell from "../views/TableCell";
 function TableRow(props) {
   let cells = [];
   
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < props.amountOfColumns; i++) {
     cells.push(<TableCell />)
   }
   
