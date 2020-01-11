@@ -11,6 +11,14 @@ class Table extends Component {
     }
   }
 
+  handleAddRow = () => {
+    this.setState({amountOfRows: this.state.amountOfRows + 1})
+  }
+
+  handleAddColumn = () => {
+    this.setState({amountOfColumns: this.state.amountOfColumns + 1})
+  }
+
   render() {
     let rows = [];
 
@@ -22,6 +30,8 @@ class Table extends Component {
       <div>
         <h1>amount of rows: {this.state.amountOfRows}</h1>
         <h1>amount of columns: {this.state.amountOfColumns}</h1>
+        <button onClick={this.handleAddRow}>Add Row</button>
+        <button onClick={this.handleAddColumn}>Add Column</button>
         <table>
           {rows}
         </table>
