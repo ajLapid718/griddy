@@ -2,7 +2,7 @@
 import React from "react";
 
 function TableCell(props) {
-  return <td></td>
+  return <td onClick={props.handleApplyColor}></td>
 }
 
 export default TableCell;

@@ -7,7 +7,8 @@ class Table extends Component {
     super();
     this.state = {
       amountOfRows: 2,
-      amountOfColumns: 5
+      amountOfColumns: 5,
+      selectedColor: "red"
     }
   }
 
@@ -27,21 +28,35 @@ class Table extends Component {
     this.setState({amountOfColumns: this.state.amountOfColumns - 1});
   }
 
+  handleColorChange = (event) => {
+    this.setState({selectedColor: event.target.value});
+  }
+
+  handleApplyColor = (event) => {
+    event.target.style.backgroundColor = this.state.selectedColor;
+  }
+
   render() {
     let rows = [];
 
     for (let i = 0; i < this.state.amountOfRows; i++) {
-      rows.push(<TableRow amountOfColumns={this.state.amountOfColumns} />);
+      rows.push(<TableRow amountOfColumns={this.state.amountOfColumns} selectedColor={this.state.selectedColor} handleApplyColor={this.handleApplyColor} />);
     }
 
     return (
       <div>
         <h1>amount of rows: {this.state.amountOfRows}</h1>
         <h1>amount of columns: {this.state.amountOfColumns}</h1>
+        <h1>selected color: {this.state.selectedColor}</h1>
         <button onClick={this.handleAddRow}>Add Row</button>
         <button onClick={this.handleAddColumn}>Add Column</button>
         <button onClick={this.handleRemoveRow}>Remove Row</button>
         <button onClick={this.handleRemoveColumn}>Remove Column</button>
+        <select onChange={this.handleColorChange}>
+          <option value="red">red</option>
+          <option value="blue">blue</option>
+          <option value="yellow">yellow</option>
+        </select>
         <table>
           {rows}
         </table>

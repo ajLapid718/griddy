@@ -6,7 +6,7 @@ function TableRow(props) {
   let cells = [];
   
   for (let i = 0; i < props.amountOfColumns; i++) {
-    cells.push(<TableCell />)
+    cells.push(<TableCell selectedColor={props.selectedColor} handleApplyColor={props.handleApplyColor} />)
   }
   
   return <tr>{cells}</tr>
